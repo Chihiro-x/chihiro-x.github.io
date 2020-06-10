@@ -1,0 +1,1494 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python常用模块记录, chihiro , Web渗透">
+    <meta name="description" content="学习记录，生活点滴">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python常用模块记录 | Chihiro</title>
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Chihiro" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Chihiro</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/Web/" class="waves-effect waves-light">
+      
+      <i class="fab fa-internet-explorer" style="zoom: 0.6;"></i>
+      
+      <span>Web</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/Linux/" class="waves-effect waves-light">
+      
+      <i class="fab fa-linux" style="zoom: 0.6;"></i>
+      
+      <span>Linux</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/Others/" class="waves-effect waves-light">
+      
+      <i class="fas fa-align-left" style="zoom: 0.6;"></i>
+      
+      <span>Others</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-radiation" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/%E9%98%85%E8%AF%BB" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>阅读</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/%E8%AE%B0%E5%BD%95" class="waves-effect waves-light">
+      
+      <i class="fas fa-camera" style="zoom: 0.6;"></i>
+      
+      <span>记录</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="far fa-calendar-alt" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fab fa-ravelry" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Chihiro</div>
+        <div class="logo-desc">
+            
+            学习记录，生活点滴
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/Web/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-internet-explorer"></i>
+			
+			Web
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/Linux/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-linux"></i>
+			
+			Linux
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/Others/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-align-left"></i>
+			
+			Others
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-radiation"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/%E9%98%85%E8%AF%BB" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			阅读
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/%E8%AE%B0%E5%BD%95" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-camera"></i>
+			
+			记录
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw far fa-calendar-alt"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-ravelry"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python常用模块记录</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">编程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Others/" class="post-category">
+                                Others
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-07
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="零散知识"><a href="#零散知识" class="headerlink" title="零散知识"></a>零散知识</h1><h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><p>用来处理异常，运行代码时有时会出现各种各样的错误，致使解析器中断执行，并提示xxxxxxErorr的提示，后面跟具体的错误的描述，这被称为是引发了异常。其实异常告诉我们的是遇到了什么类型的错误。xxxxErorr就是python内置的异常类型。每一种异常类型，都有它自己的错误信息。出现异常程序终止。其它有些异常类型不影响代码的功能，而又不想让异常中断执行时，就要对异常进行处理，而不让他中断程序：</p>
+<p>例如：有一个字典里面存放光头强的信息，想取到它的资料，但具体都有什么资料我们不知道，如果输入的键不存在就会引发异常而中断执行。致使后面的代码也为无法执行。</p>
+<pre class=" language-python"><code class="language-python">information <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token string">'20'</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+光头强
+Traceback (most recent call last):
+  File "/home/chihiro/Project/PyCharmProject/text.py", line 3, in &lt;module>
+    print(information['sex'])
+KeyError: 'sex'
+"""</span></code></pre>
+<p>那么就要捕获这些异常，绕过它，能让下面的代码继续运行。python提供了try语句来实现这些功能。</p>
+<p>语法：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    可能发生异常的代码
+<span class="token keyword">except</span> 异常类型：
+    捕获的异常后要执行的代码</code></pre>
+<p><strong>示例：</strong></p>
+<pre class=" language-python"><code class="language-python">information <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token string">'20'</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> KeyError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"sex不存在"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+光头强
+sex不存在
+20
+"""</span></code></pre>
+<p><strong>捕获所有异常</strong>：</p>
+<p>引发异常的xxxxErorr都是python异常的类型。python中所有异常类型都是基类Exception的基类。那么在写代码的时候不用指定异常的具体类型，只要捕获基类就等于捕获了所有的异常，但输出的是具体的异常信息，这很有利于在大范围内找到具体的错误。也就是你不知道会产生什么样的错误类型，Exception是万能的。</p>
+<p>示例：</p>
+<pre class=" language-python"><code class="language-python">information <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token string">'20'</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"sex不存在"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+光头强
+&lt;class 'KeyError'>
+sex不存在
+20
+"""</span></code></pre>
+<p><strong>异常里的else子句</strong>：</p>
+<p>else子句是可选的，如果使用，必须放在所有的except子句之后。它是在try子句没有发生异常的情况执行。</p>
+<pre class=" language-python"><code class="language-python">information <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token string">'20'</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"光头强是伐木工"</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+光头强
+光头强是伐木工
+"""</span></code></pre>
+<p><strong>finally子句</strong> </p>
+<p>写在try语句的最后。不管 try 子句里面是否有异常，finally 子句都会执行。</p>
+<pre class=" language-python"><code class="language-python">information <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token string">'20'</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"sex不存在"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"调研结束"</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+光头强
+&lt;class 'KeyError'>
+sex不存在
+20
+调研结束
+"""</span></code></pre>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>为了编写可维护的代码，我们把很多函数分组，分别放到不同的文件里，这样，每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。在Python中，一个.py文件就称之为一个模块（Module）。在Python中用关键字<strong>import</strong>来引入某个模块，比如要引用模块<code>random</code>，就可以在文件最开始的地方用<code>import random</code>来引入。在调用random模块中的函数时，必须这样引用：如<code>random.randint()</code>Python的from语句让你从模块中导入一个指定的部分到当前命名空间中，例如，要导入模块random的randint()函数，使用如下语句<code>from ranfom import randint</code></p>
+<h2 id="random"><a href="#random" class="headerlink" title="random"></a>random</h2><p>random库是用于产生并运用随机数的标准库</p>
+<h3 id="randint"><a href="#randint" class="headerlink" title="randint()"></a>randint()</h3><p>生成指定区间内的随机整数。</p>
+<p><strong>示例</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""生成1～10之间的随机整数"""</span>
+<span class="token keyword">import</span> random
+<span class="token keyword">print</span> <span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="seed"><a href="#seed" class="headerlink" title="seed()"></a>seed()</h3><p>主要是利用种子去产生一个随机数序列，指定的种子对应指定的随机数序列，如果不对种子赋值或者不调用seed函数，默认使用当前的时间作为种子去产生一个随机数序列</p>
+<p><strong>示例</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+不设置种子
+运行第一次结果0.7016987358817125
+运行第二次结果0.7271754857060891
+"""</span>
+<span class="token keyword">import</span> random
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+产生种子5对应的序列
+第一次运行结果0.6229016948897019
+第二次运行结果0.6229016948897019
+"""</span>
+<span class="token keyword">import</span> random
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="random-1"><a href="#random-1" class="headerlink" title="random()"></a>random()</h3><p>生成0～1之间的随机小数</p>
+<p><strong>示例</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="requests"><a href="#requests" class="headerlink" title="requests()"></a>requests()</h2><p>用来做网页内容的解析</p>
+<h3 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h3><p><strong>GET请求</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"https://www.sqlsec.com"</span><span class="token punctuation">)</span></code></pre>
+<p><strong>POST请求</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"username"</span><span class="token punctuation">:</span> <span class="token string">"admin"</span><span class="token punctuation">,</span>
+    <span class="token string">"password"</span><span class="token punctuation">:</span> <span class="token string">"password"</span><span class="token punctuation">,</span>
+    <span class="token string">"Login"</span><span class="token punctuation">:</span> <span class="token string">"Login"</span><span class="token punctuation">,</span>
+    <span class="token string">"user_token"</span><span class="token punctuation">:</span> <span class="token string">"3370d41cf95f4e9b08360f5fe9316325"</span>
+<span class="token punctuation">}</span>
+requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">"http://192.168.31.54:222/login.php"</span><span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span></code></pre>
+<p><strong>其他HTTP请求</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+requests<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">'https://httpbin.org/put'</span><span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'key'</span><span class="token punctuation">:</span><span class="token string">'value'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+requests<span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token string">'https://httpbin.org/delete'</span><span class="token punctuation">)</span>
+
+requests<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token string">'https://httpbin.org/get'</span><span class="token punctuation">)</span>
+
+requests<span class="token punctuation">.</span>options<span class="token punctuation">(</span><span class="token string">'https://httpbin.org/get'</span><span class="token punctuation">)</span></code></pre>
+<h3 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token string">"直接将参数拼接在URL后面"</span>
+requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://192.168.31.54:222/Less-1?id=1"</span><span class="token punctuation">)</span>
+
+<span class="token string">"使用关键字params,等同于http://192.168.31.54:222/Less-1?id=1"</span>
+requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://192.168.31.54:222/Less-1"</span><span class="token punctuation">,</span> params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token string">"使用data,以表单的形式传递参数（参数不会拼接到 URL 后面）"</span>
+requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">"http://192.168.31.54:222/Less-1"</span><span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token string">"添加headers"</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"User-Agent"</span><span class="token punctuation">:</span><span class="token string">"Mozilla/5.0"</span><span class="token punctuation">}</span>
+requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://192.168.31.54:222"</span><span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span></code></pre>
+<h3 id="获取响应内容"><a href="#获取响应内容" class="headerlink" title="获取响应内容"></a>获取响应内容</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+re <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"https://www.sqlsec.com"</span><span class="token punctuation">)</span>
+<span class="token string">"获取服务器响应文本内容"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+<span class="token string">"获取服务器文本响应内容编码格式"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>encoding<span class="token punctuation">)</span>
+<span class="token string">"获取字节响应内容"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+<span class="token string">"获取响应码"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
+<span class="token string">"获取响应头"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>readers<span class="token punctuation">)</span></code></pre>
+<h2 id="re"><a href="#re" class="headerlink" title="re"></a>re</h2><p>在 Python 中，我们可以使用内置的 re 模块来使用正则表达式。</p>
+<h3 id="re-match"><a href="#re-match" class="headerlink" title="re.match"></a>re.match</h3><p>语法：</p>
+<p><code>re.match(&#39;匹配规则&#39;,&#39;需要过滤的内容&#39;)</code></p>
+<p><strong>示例：</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""提取结果123"""</span>
+<span class="token keyword">import</span> re
+content <span class="token operator">=</span> <span class="token string">"hello 123 python"</span>
+re <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span>r<span class="token string">"^he.*\s(\d+)\s.*on$"</span><span class="token punctuation">,</span> content<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+.*？是我们在匹配过程中最常使用到的
+表示的就是匹配任意字符但是.*？的 . 代表所有的单个字符
+除了 \n \如果我们的字符串有换行了怎么办呢？
+这时候使用re.S,使 . 匹配包括换行在内的所有字符
+"""</span>
+<span class="token keyword">import</span> re
+content <span class="token operator">=</span> r"hello \
+<span class="token number">123</span> python"
+re <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span>r<span class="token string">"^he.*(\d{3}).*on$"</span><span class="token punctuation">,</span> content<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>注：<code>re.group(N)</code> 返回第N组括号匹配的字符，而<code>re.group() == re.group(0) == 所有匹配的字符</code>，<code>re.groups()</code>返回所有括号匹配的字符。</p>
+<h3 id="re-search"><a href="#re-search" class="headerlink" title="re.search"></a>re.search</h3><p>直接去扫描字符串，然后把匹配成功的地一个结果返回给你。</p>
+<p>语法：</p>
+<p><code>re.search(&#39;匹配规则&#39;,&#39;待扫描的内容&#39;)</code></p>
+<p><strong>示例：</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"提取结果123"</span>
+<span class="token keyword">import</span> re
+content <span class="token operator">=</span> r"hello \
+<span class="token number">123</span> python"
+re <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>r<span class="token string">"^he.*(\d{3}).*on$"</span><span class="token punctuation">,</span> content<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="re-findall"><a href="#re-findall" class="headerlink" title="re.findall"></a>re.findall</h3><p>通过它我们就能轻松的获取所有匹配的内容了</p>
+<p>语法：</p>
+<p><code>re.findall(&#39;匹配规则&#39;,&#39;待查找的内容&#39;)</code></p>
+<p><strong>示例：</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"提取结果['123', '456', '789']"</span>
+<span class="token keyword">import</span> re
+content <span class="token operator">=</span> <span class="token triple-quoted-string string">"""hello 123 python;
+hello 456 python;
+hello 789 python;"""</span>
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'he.*?(\d+)\s.*?n;'</span><span class="token punctuation">,</span> content<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span></code></pre>
+<h3 id="re-sub"><a href="#re-sub" class="headerlink" title="re.sub"></a>re.sub</h3><p>把匹配到的内容替换为其他内容</p>
+<p>语法：</p>
+<p><code>re.sub(&#39;匹配规则&#39;,&#39;替换为&#39;,&#39;待查找的内容&#39;)</code></p>
+<p><strong>示例：</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"提取结果999 999 999"</span>
+<span class="token keyword">import</span> re
+content <span class="token operator">=</span> <span class="token triple-quoted-string string">"""hello 123 python;
+hello 456 python;
+hello 789 python;"""</span>
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>r<span class="token string">'he.*?(\d+)\s.*?n;'</span><span class="token punctuation">,</span> <span class="token string">'999'</span><span class="token punctuation">,</span> content<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span></code></pre>
+<h3 id="re-compile"><a href="#re-compile" class="headerlink" title="re.compile"></a>re.compile</h3><p>这个主要就是把我们的匹配符封装一下</p>
+<p><strong>示例：</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> re
+content <span class="token operator">=</span> <span class="token string">"hello 123 python"</span>
+pattern <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">"^he.*\s(\d+)\s.*on$"</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+re <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> content<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h2><p>可以从 HTML 或 XML 文件中提取数据的 Python 库</p>
+<p>首先写一段HTML代码用来练习</p>
+<pre class=" language-python"><code class="language-python">html <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+&lt;html>
+&lt;head>
+    &lt;title>学习爬虫&lt;/title>
+    &lt;meta charset="UTF-8">
+&lt;/head>
+&lt;p>你是猪吗？&lt;/p>
+&lt;p>
+    &lt;a href="www.baidu.com">猪猪侠&lt;/a>
+    &lt;a href="www.baidu.com">狗熊岭&lt;/a>
+    你喜欢哪一个？
+&lt;/p>
+&lt;/html>
+"""</span></code></pre>
+<p>示例：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+html <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+&lt;html>
+&lt;head>
+    &lt;title>学习爬虫&lt;/title>
+    &lt;meta charset="UTF-8">
+&lt;/head>
+&lt;p>你是猪吗？&lt;/p>
+&lt;p>
+    &lt;a href="www.chihiro.com" id="demo">猪猪侠&lt;/a>
+    &lt;a href="https://chihiro-x.github.com">狗熊岭&lt;/a>
+    你喜欢哪一个？
+&lt;/p>
+&lt;/html>
+"""</span>
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> <span class="token string">'lxml'</span><span class="token punctuation">)</span>
+<span class="token string">"获取标题内容"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>title<span class="token punctuation">.</span>string<span class="token punctuation">)</span>
+<span class="token string">"获取p标签里的内容"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>p<span class="token punctuation">.</span>string<span class="token punctuation">)</span>
+<span class="token string">"获取title的父级标签"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>title<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token string">"获取超链接，获取a标签内容使用soup.a.string"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+<span class="token string">"获取所有超链接"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token string">"获取id为demo的超链接"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">"demo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token string">"获取网页中的所有内容"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>get_text<span class="token punctuation">)</span></code></pre>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h2><p>可创建一个整数列表</p>
+<p>函数语法</p>
+<pre class=" language-python"><code class="language-python">range<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop step<span class="token punctuation">)</span></code></pre>
+<p>参数说明：</p>
+<ul>
+<li>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</li>
+<li>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</li>
+<li>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"输出1 2 3 4 5 6 7 8 9"</span>
+<span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chihiro</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://chihiro-x.github.io/2020/06/07/python-xue-xi-ji-lu/">https://chihiro-x.github.io/2020/06/07/python-xue-xi-ji-lu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Chihiro</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">编程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,qq,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/06/07/python-xue-xi-ji-lu/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python常用模块记录">
+                        
+                        <span class="card-title">Python常用模块记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            零散知识try用来处理异常，运行代码时有时会出现各种各样的错误，致使解析器中断执行，并提示xxxxxxErorr的提示，后面跟具体的错误的描述，这被称为是引发了异常。其实异常告诉我们的是遇到了什么类型的错误。xxxxErorr就是pytho
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Others/" class="post-category">
+                                    Others
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">编程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/06/linux-chang-yong-ming-ling/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/" class="responsive-img" alt="Linux常用命令">
+                        
+                        <span class="card-title">Linux常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            curl
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Chihiro
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Chihiro<br />'
+            + '文章作者: Chihiro<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="902935008"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Chihiro</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">5.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "5";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Chihiro-x" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2755357026@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="https://chihiro-x.github.io/picgo//images/qq.gif" class="tooltipped" target="_blank" data-tooltip="QQ联系我" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://chihiro-x.github.io/picgo//images/wx.jpg" class="tooltipped" target="_blank" data-tooltip="微信联系我" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

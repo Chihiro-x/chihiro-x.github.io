@@ -444,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-10
+                    2020-06-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    5.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    21 分
                 </div>
                 
 
@@ -473,7 +473,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="零散知识"><a href="#零散知识" class="headerlink" title="零散知识"></a>零散知识</h1><h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><p>用来处理异常，运行代码时有时会出现各种各样的错误，致使解析器中断执行，并提示xxxxxxErorr的提示，后面跟具体的错误的描述，这被称为是引发了异常。其实异常告诉我们的是遇到了什么类型的错误。xxxxErorr就是python内置的异常类型。每一种异常类型，都有它自己的错误信息。出现异常程序终止。其它有些异常类型不影响代码的功能，而又不想让异常中断执行时，就要对异常进行处理，而不让他中断程序：</p>
+                <h1 id="零散知识"><a href="#零散知识" class="headerlink" title="零散知识"></a>零散知识</h1><h2 id="try语句"><a href="#try语句" class="headerlink" title="try语句"></a>try语句</h2><p>用来处理异常，运行代码时有时会出现各种各样的错误，致使解析器中断执行，并提示xxxxxxErorr的提示，后面跟具体的错误的描述，这被称为是引发了异常。其实异常告诉我们的是遇到了什么类型的错误。xxxxErorr就是python内置的异常类型。每一种异常类型，都有它自己的错误信息。出现异常程序终止。其它有些异常类型不影响代码的功能，而又不想让异常中断执行时，就要对异常进行处理，而不让他中断程序：</p>
 <p>例如：有一个字典里面存放光头强的信息，想取到它的资料，但具体都有什么资料我们不知道，如果输入的键不存在就会引发异常而中断执行。致使后面的代码也为无法执行。</p>
 <pre class=" language-python"><code class="language-python">information <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token string">'20'</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">}</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>information<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -559,6 +559,20 @@ sex不存在
 20
 调研结束
 """</span></code></pre>
+<h2 id="多线程，多进程，协程"><a href="#多线程，多进程，协程" class="headerlink" title="多线程，多进程，协程"></a>多线程，多进程，协程</h2><p><strong>进程</strong></p>
+<p>进程就是正在运行的程序，比如你的系统现在运行着的QQ就是一个进程，一旦「QQ」运行起来系统就会分配给「QQ」</p>
+<p>内存和资源。<strong>单进程</strong>就是你的电脑只能做一个事情，比如打开啦QQ就不能再打开微信啦，但是现在可以看到你的电脑又是玩游戏，又是听音乐，这就是<strong>多线程</strong>，在同一段时间里可以’同时’执行多个任务。</p>
+<p><strong>线程</strong></p>
+<p>在一个进程里可以执行多个任务，在这里的每一个任务就是一个线程，线程可以说是程序用CPU的一个基本单元，所以一个程序里如果只是单一的一个执行路径，呢他就是单线程；如果程序中有多个执行路径呢他就是多线程。</p>
+<p><strong>并行</strong></p>
+<p>一个单核的CPU一次只能执行一个进程，多核的CPU就可以同时执行多个进程，这就是并行。在某一个时间段里可以同时执行多个进程。</p>
+<p><strong>并发</strong></p>
+<p>比如在双十一的呢天晚上12：00会有很多人在这个时间点上秒杀某一个商品。在某一时间点上可以同时执行多个进程。</p>
+<p><strong>协程</strong></p>
+<p>协程也叫做微线程，在一个线程里面可以执行多个函数，线程和进程是通过系统调度的，而微线程则不需要，可以根据需要自己调度因为微线程是函数之间在切换所以开销很小。</p>
+<p><strong>互斥锁</strong></p>
+<p>进程和进程之间是相互独立的，而一个进程里的多个线程，这些线程共享一个空间，这个时候线程就要搞事情了，毕竟一块蛋糕被共享了谁都想多分一点，就挤破头的想要抢占多一点资源；这样数据就不安全了所以就有了互斥锁。</p>
+<hr>
 <h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>为了编写可维护的代码，我们把很多函数分组，分别放到不同的文件里，这样，每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。在Python中，一个.py文件就称之为一个模块（Module）。在Python中用关键字<strong>import</strong>来引入某个模块，比如要引用模块<code>random</code>，就可以在文件最开始的地方用<code>import random</code>来引入。在调用random模块中的函数时，必须这样引用：如<code>random.randint()</code>Python的from语句让你从模块中导入一个指定的部分到当前命名空间中，例如，要导入模块random的randint()函数，使用如下语句<code>from ranfom import randint</code></p>
 <h2 id="random"><a href="#random" class="headerlink" title="random"></a>random</h2><p>random库是用于产生并运用随机数的标准库</p>
 <h3 id="randint"><a href="#randint" class="headerlink" title="randint()"></a>randint()</h3><p>生成指定区间内的随机整数。</p>
@@ -695,53 +709,333 @@ content <span class="token operator">=</span> <span class="token string">"hello 
 pattern <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">"^he.*\s(\d+)\s.*on$"</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
 re <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> content<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h2 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h2><p>可以从 HTML 或 XML 文件中提取数据的 Python 库</p>
+<h2 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h2><p>可以从 HTML 或 XML 文件中提取数据</p>
 <p>首先写一段HTML代码用来练习</p>
-<pre class=" language-python"><code class="language-python">html <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
-&lt;html>
-&lt;head>
-    &lt;title>学习爬虫&lt;/title>
-    &lt;meta charset="UTF-8">
-&lt;/head>
-&lt;p>你是猪吗？&lt;/p>
-&lt;p>
-    &lt;a href="www.baidu.com">猪猪侠&lt;/a>
-    &lt;a href="www.baidu.com">狗熊岭&lt;/a>
-    你喜欢哪一个？
-&lt;/p>
-&lt;/html>
-"""</span></code></pre>
+<pre class=" language-python"><code class="language-python"></code></pre>
 <p>示例：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
-html <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
-&lt;html>
-&lt;head>
-    &lt;title>学习爬虫&lt;/title>
-    &lt;meta charset="UTF-8">
-&lt;/head>
-&lt;p>你是猪吗？&lt;/p>
-&lt;p>
-    &lt;a href="www.chihiro.com" id="demo">猪猪侠&lt;/a>
-    &lt;a href="https://chihiro-x.github.com">狗熊岭&lt;/a>
-    你喜欢哪一个？
-&lt;/p>
-&lt;/html>
+<pre class=" language-python"><code class="language-python"></code></pre>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>Python3 中可以使用 json 模块来对 JSON 数据进行编解码</p>
+<h3 id="loads"><a href="#loads" class="headerlink" title="loads()"></a>loads()</h3><p>将json数据转化为python对象是这样的</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> json
+jsondata <span class="token operator">=</span> <span class="token triple-quoted-string string">'''
+{
+"Uin":0,
+"UserName":"@c482d142bc698bc3971d9f8c26335c5c",
+"NickName":"8",
+"DisplayName":"",
+"ChatRoomId":0,
+"KeyWord":"che",
+"EncryChatRoomId":"",
+"IsOwner":0
+}
+'''</span>
+friend <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>jsondata<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>friend<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+{'Uin': 0, 'UserName': '@c482d142bc698bc3971d9f8c26335c5c', 'NickName': '8', 'DisplayName': '', 'ChatRoomId': 0, 'KeyWord': 'che', 'EncryChatRoomId': '', 'IsOwner': 0}
+"""</span></code></pre>
+<h3 id="dumps"><a href="#dumps" class="headerlink" title="dumps()"></a>dumps()</h3><p>将python对象转换为json</p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"将上面输出的结果转换为json"</span>
+<span class="token keyword">import</span> json
+data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'Uin'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token string">'UserName'</span><span class="token punctuation">:</span> <span class="token string">'@c482d142bc698bc3971d9f8c26335c5c'</span><span class="token punctuation">,</span>
+    <span class="token string">'NickName'</span><span class="token punctuation">:</span> <span class="token string">'8'</span><span class="token punctuation">,</span>
+    <span class="token string">'DisplayName'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'ChatRoomId'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token string">'KeyWord'</span><span class="token punctuation">:</span> <span class="token string">'che'</span><span class="token punctuation">,</span>
+    <span class="token string">'EncryChatRoomId'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'IsOwner'</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+json <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+{"Uin": 0, "UserName": "@c482d142bc698bc3971d9f8c26335c5c", "NickName": "8", "DisplayName": "", "ChatRoomId": 0, "KeyWord": "che", "EncryChatRoomId": "", "IsOwner": 0}
+
+"""</span></code></pre>
+<h2 id="threading"><a href="#threading" class="headerlink" title="threading"></a>threading</h2><p>多线程操作模块</p>
+<h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><p>Thread 类提供了如下的 <code>__init__()</code> 构造器，可以用来创建线程：<code>__init__(self, group=None, target=None, name=None, args=(), kwargs=None, *,daemon=None)</code></p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>target</td>
+<td>线程调用的对象，就是目标函数</td>
+</tr>
+<tr>
+<td>name</td>
+<td>为线程起一个名字(线程的名字)如果没有赋值，默认为“Thread-N” 的形式</td>
+</tr>
+<tr>
+<td>args</td>
+<td>为目标函数传递实参，元组</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>为目标函数传递关键字参数，字典</td>
+</tr>
+</tbody></table>
+<p>直接创建 Thread ，将一个 callable 对象从类的构造器传递进去，这个 callable 就是回调函数，用来处理任务。比如以下例子，雇佣俩保姆，在同一时间做不同的事情</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> time
+<span class="token keyword">def</span> <span class="token function">zuofan_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小红在%s做饭"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">xiyi_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小芳正在%s洗衣服"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    mythread1 <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>zuofan_time<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 创建线程</span>
+    mythread2 <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>xiyi_time<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 创建线程</span>
+    mythread1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#启动线程</span>
+    mythread2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#启动线程</span>
+<span class="token triple-quoted-string string">"""
+小红在13点08分07秒做饭
+小芳正在13点08分07秒洗衣服
+小红在13点08分08秒做饭
+小芳正在13点08分08秒洗衣服
+小红在13点08分09秒做饭
+小芳正在13点08分09秒洗衣服
+小芳正在13点08分10秒洗衣服
+小红在13点08分10秒做饭
+"""</span></code></pre>
+<p>通过继承 Thread 类，我们可以自定义一个线程类，从而实例化该类对象，获得子线程。需要注意的是，在创建 Thread 类的子类时，必须重写从父类继承得到的 run() 方法。因为该方法即为要创建的子线程执行的方法，其功能如同第一种创建方法中的 action() 自定义函数。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> time
+<span class="token keyword">class</span> <span class="token class-name">Mythread</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 继承threading.Thread</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        threading<span class="token punctuation">.</span>Thread<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 保留原来threading.Thread中的初始化函数</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>delay <span class="token operator">=</span> delay
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 重写run方法</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"线程开始："</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+        zuofan_time<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>delay<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"线程结束："</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">zuofan_time</span><span class="token punctuation">(</span>threadname<span class="token punctuation">,</span> delay<span class="token punctuation">,</span> counter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> counter<span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>delay<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s开始做饭--%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>threadname<span class="token punctuation">,</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        counter <span class="token operator">-=</span> <span class="token number">1</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    td1 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"小红"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#小红歇息一秒然后继续做饭</span>
+    td2 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"小芳"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#小芳歇息两秒然后继续做饭</span>
+    td1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    td2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+线程开始：小红
+线程开始：小芳
+小红开始做饭--16点46分02秒
+小芳开始做饭--16点46分03秒
+小红开始做饭--16点46分03秒
+小红开始做饭--16点46分04秒
+小红开始做饭--16点46分05秒
+小芳开始做饭--16点46分05秒
+小红开始做饭--16点46分06秒
+线程结束：小红
+小芳开始做饭--16点46分07秒
+小芳开始做饭--16点46分09秒
+小芳开始做饭--16点46分11秒
+线程结束：小芳
+"""</span></code></pre>
+<h2 id="concurrent-futures"><a href="#concurrent-futures" class="headerlink" title="concurrent.futures"></a>concurrent.futures</h2><p>它提供异步执行回调高层接口，是对线程池和进程池的进一步封装，让开发者可以使用统一的接口非常容易的使用线程池和进程池。</p>
+<p>还是以上面的为例子，当吃饭的人多了，两个保姆也不够用啦，怎么办？疯狂的开启线程？当然这是不可行的</p>
+<pre class=" language-python"><code class="language-python">td1 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"小红"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+td2 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"小芳"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+td3 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"小狗"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+td4 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"大黄"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+td5 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"阿狗"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+td6 <span class="token operator">=</span> Mythread<span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span></code></pre>
+<p>因为频繁的创建线程 销毁线程，非常的浪费资源；所以因该把他们放在一起，也就是线程池，通过线程池就可以重复利用线程，不会造成过多的浪费。在 python 中可以使用 <code>ThreadPoolExecutor</code> 来实现线程池。如下</p>
+<h3 id="ThreadPoolExecutor"><a href="#ThreadPoolExecutor" class="headerlink" title="ThreadPoolExecutor"></a>ThreadPoolExecutor</h3><p>创建线程池</p>
+<p><code>ThreadPoolExecutor(max_workers=)</code>max_workers 参数来设置线程池中最多能同时运行的线程数目</p>
+<p><code>submit(函数名(传递给函数的参数))</code>函数用来提交线程需要执行的任务到线程池中，并返回该任务的句柄（类似于文件、画图），注意 submit() 不是阻塞的，而是立即返回。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">from</span> concurrent<span class="token punctuation">.</span>futures <span class="token keyword">import</span> ThreadPoolExecutor
+<span class="token keyword">import</span> time
+<span class="token keyword">class</span> <span class="token class-name">Mythread</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        threading<span class="token punctuation">.</span>Thread<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>delay <span class="token operator">=</span> delay
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        zuofan_time<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>delay<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">zuofan_time</span><span class="token punctuation">(</span>threadname<span class="token punctuation">,</span> delay<span class="token punctuation">,</span> counter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> counter<span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>delay<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s开始做饭--%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>threadname<span class="token punctuation">,</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        counter <span class="token operator">-=</span> <span class="token number">1</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    pool <span class="token operator">=</span> ThreadPoolExecutor<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pool<span class="token punctuation">.</span>submit<span class="token punctuation">(</span>zuofan_time<span class="token punctuation">(</span><span class="token string">'某某某'</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ <span class="token triple-quoted-string string">"""
+某某某1开始做饭--17点35分36秒
+某某某1开始做饭--17点35分37秒
+某某某1开始做饭--17点35分38秒
+某某某1开始做饭--17点35分39秒
+某某某1开始做饭--17点35分40秒
+某某某2开始做饭--17点35分41秒
+某某某2开始做饭--17点35分42秒
+某某某2开始做饭--17点35分43秒
+某某某2开始做饭--17点35分44秒
+某某某2开始做饭--17点35分45秒
+某某某3开始做饭--17点35分46秒
+某某某3开始做饭--17点35分47秒
+某某某3开始做饭--17点35分48秒
+某某某3开始做饭--17点35分49秒
+某某某3开始做饭--17点35分50秒
+某某某4开始做饭--17点35分51秒
+某某某4开始做饭--17点35分52秒
+某某某4开始做饭--17点35分53秒
+某某某4开始做饭--17点35分54秒
+某某某4开始做饭--17点35分55秒
+ """</span></code></pre>
+<h3 id="ProcessPoolExecutor"><a href="#ProcessPoolExecutor" class="headerlink" title="ProcessPoolExecutor"></a>ProcessPoolExecutor</h3><p>创建进程池(进程数不需要大于内核数)</p>
+<p>用法与上面那个方法相同</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> multiprocessing
+<span class="token keyword">from</span> concurrent<span class="token punctuation">.</span>futures <span class="token keyword">import</span> ProcessPoolExecutor
+<span class="token keyword">import</span> time
+<span class="token keyword">class</span> <span class="token class-name">Myprocess</span><span class="token punctuation">(</span>multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>delay <span class="token operator">=</span> delay
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        zuofan_time<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>delay<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">zuofan_time</span><span class="token punctuation">(</span>processname<span class="token punctuation">,</span> delay<span class="token punctuation">,</span> counter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> counter<span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>delay<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s开始做饭--%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>processname<span class="token punctuation">,</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        counter <span class="token operator">-=</span> <span class="token number">1</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    pool <span class="token operator">=</span> ProcessPoolExecutor<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pool<span class="token punctuation">.</span>submit<span class="token punctuation">(</span>zuofan_time<span class="token punctuation">(</span><span class="token string">'某某某'</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+某某某1开始做饭--19点06分06秒
+某某某1开始做饭--19点06分07秒
+某某某1开始做饭--19点06分08秒
+某某某1开始做饭--19点06分09秒
+某某某1开始做饭--19点06分10秒
+某某某2开始做饭--19点06分11秒
+某某某2开始做饭--19点06分12秒
+某某某2开始做饭--19点06分13秒
+某某某2开始做饭--19点06分14秒
+某某某2开始做饭--19点06分15秒
+"""</span></code></pre>
+<h2 id="multiprocessing"><a href="#multiprocessing" class="headerlink" title="multiprocessing"></a>multiprocessing</h2><p>多进程操作模块，对多核CPU的利用率比Thread要好。</p>
+<h3 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h3><p>Process 对象与 Thread 对象的用法相同。直接看例子吧，直接进行创建！</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> multiprocessing
+<span class="token keyword">import</span> time
+<span class="token keyword">def</span> <span class="token function">zuofan_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小红在%s做饭"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">xiyi_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小芳正在%s洗衣服"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    mythread1 <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>zuofan_time<span class="token punctuation">)</span>
+    mythread2 <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>xiyi_time<span class="token punctuation">)</span>
+    mythread1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    mythread2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token triple-quoted-string string">"""
+小红在18点48分19秒做饭
+小芳正在18点48分19秒洗衣服
+小红在18点48分20秒做饭
+小芳正在18点48分21秒洗衣服
+小红在18点48分22秒做饭
+小芳正在18点48分22秒洗衣服
+小红在18点48分23秒做饭
+小芳正在18点48分23秒洗衣服
+ """</span></code></pre>
+<p>创建子类，继承父类（Process），重写Run方法</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> multiprocessing
+<span class="token keyword">import</span> time
+<span class="token keyword">class</span> <span class="token class-name">Myprocess</span><span class="token punctuation">(</span>multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>delay <span class="token operator">=</span> delay
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 重写run方法</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"进程开始："</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+        zuofan_time<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>delay<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"进程结束："</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">zuofan_time</span><span class="token punctuation">(</span>processname<span class="token punctuation">,</span> delay<span class="token punctuation">,</span> counter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> counter<span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>delay<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s开始做饭--%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>processname<span class="token punctuation">,</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H点%M分%S秒"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        counter <span class="token operator">-=</span> <span class="token number">1</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    td1 <span class="token operator">=</span> Myprocess<span class="token punctuation">(</span><span class="token string">"小红"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#小红歇息一秒然后继续做饭</span>
+    td2 <span class="token operator">=</span> Myprocess<span class="token punctuation">(</span><span class="token string">"小芳"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#小芳歇息两秒然后继续做饭</span>
+    td1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    td2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+进程开始：小红
+进程开始：小芳
+小红开始做饭--18点56分26秒
+小红开始做饭--18点56分27秒
+小芳开始做饭--18点56分27秒
+小红开始做饭--18点56分28秒
+小红开始做饭--18点56分29秒
+小芳开始做饭--18点56分29秒
+小红开始做饭--18点56分30秒
+进程结束：小红
+小芳开始做饭--18点56分31秒
+小芳开始做饭--18点56分33秒
+小芳开始做饭--18点56分35秒
+进程结束：小芳
+"""</span></code></pre>
+<h3 id="Pool"><a href="#Pool" class="headerlink" title="Pool"></a>Pool</h3><p>表示一个工作进程池。它具有允许以几种不同方式将任务分配到工作进程的方法。(进程数不需要大于内核数)</p>
+<h2 id="time"><a href="#time" class="headerlink" title="time"></a>time</h2><p>时间处理的模块</p>
+<h3 id="time-1"><a href="#time-1" class="headerlink" title="time()"></a>time()</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+返回当前时间戳 运行结果 1591867153.6124237
 """</span>
-soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> <span class="token string">'lxml'</span><span class="token punctuation">)</span>
-<span class="token string">"获取标题内容"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>title<span class="token punctuation">.</span>string<span class="token punctuation">)</span>
-<span class="token string">"获取p标签里的内容"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>p<span class="token punctuation">.</span>string<span class="token punctuation">)</span>
-<span class="token string">"获取title的父级标签"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>title<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-<span class="token string">"获取超链接，获取a标签内容使用soup.a.string"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>a<span class="token punctuation">)</span>
-<span class="token string">"获取所有超链接"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token string">"获取id为demo的超链接"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">"demo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token string">"获取网页中的所有内容"</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>get_text<span class="token punctuation">)</span></code></pre>
+<span class="token keyword">import</span> time
+<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h3 id="sleep"><a href="#sleep" class="headerlink" title="sleep()"></a>sleep()</h3><p>线程推迟指定的时间运行。单位为秒。</p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"每过两秒打印一个数字"</span>
+<span class="token keyword">import</span> time
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre>
+<h3 id="localtime"><a href="#localtime" class="headerlink" title="localtime()"></a>localtime()</h3><p>以时间元祖(struct_time)的形式返回</p>
+<pre class=" language-python"><code class="language-python">time<span class="token punctuation">.</span>struct_time<span class="token punctuation">(</span>tm_year<span class="token operator">=</span><span class="token number">2020</span><span class="token punctuation">,</span> tm_mon<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> tm_mday<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span> tm_hour<span class="token operator">=</span><span class="token number">17</span><span class="token punctuation">,</span> tm_min<span class="token operator">=</span><span class="token number">26</span><span class="token punctuation">,</span> tm_sec<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span> tm_wday<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> tm_yday<span class="token operator">=</span><span class="token number">163</span><span class="token punctuation">,</span> tm_isdst<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+<h3 id="strftime"><a href="#strftime" class="headerlink" title="strftime()"></a>strftime()</h3><p>根据时间元组的形式格化为字符形式</p>
+<pre class=" language-python"><code class="language-python">    <span class="token operator">%</span>A      本地完整星期名称
+    <span class="token operator">%</span>b      本地简化月份名称
+    <span class="token operator">%</span>B      本地完整月份名称
+    <span class="token operator">%</span>c      本地相应的日期和时间表示
+    <span class="token operator">%</span>d      一个月中的第几天<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">31</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>H      一天中的第几个小时<span class="token punctuation">(</span><span class="token number">24</span>小时制，<span class="token number">00</span><span class="token operator">-</span><span class="token number">23</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>l      一天中的第几个小时<span class="token punctuation">(</span><span class="token number">12</span>小时制，<span class="token number">01</span><span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>j      一年中的第几天<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">366</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>m      月份<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>M      分钟数<span class="token punctuation">(</span><span class="token number">00</span><span class="token operator">-</span><span class="token number">59</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>p      本地am或者pm的相应符
+    <span class="token operator">%</span>S      秒<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">61</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>U      一年中的星期数<span class="token punctuation">(</span><span class="token number">00</span><span class="token operator">-</span><span class="token number">53</span><span class="token punctuation">,</span>星期天是一个星期的开始<span class="token punctuation">,</span>第一个星期天之前的所有天数都放在第０周<span class="token punctuation">)</span>
+    <span class="token operator">%</span>w      一个星期中的第几天<span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">0</span>是星期天<span class="token punctuation">)</span>
+    <span class="token operator">%</span>W      和<span class="token operator">%</span>U基本相同，不同的是<span class="token operator">%</span>W以星期一为一个星期的开始
+    <span class="token operator">%</span>x      本地相应日期
+    <span class="token operator">%</span>X      本地相应时间
+    <span class="token operator">%</span>y      去掉世纪的年份<span class="token punctuation">(</span><span class="token number">00</span><span class="token operator">-</span><span class="token number">99</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>Y      完整的年份        </code></pre>
+<p>例如：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> time
+<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token string">"2020-06-11 17:37:22"</span></code></pre>
 <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h2><p>可创建一个整数列表</p>
 <p>函数语法</p>
 <pre class=" language-python"><code class="language-python">range<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop step<span class="token punctuation">)</span></code></pre>
@@ -1003,7 +1297,7 @@ soup <span class="token operator">=</span> BeautifulSoup<span class="token punct
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            零散知识try用来处理异常，运行代码时有时会出现各种各样的错误，致使解析器中断执行，并提示xxxxxxErorr的提示，后面跟具体的错误的描述，这被称为是引发了异常。其实异常告诉我们的是遇到了什么类型的错误。xxxxErorr就是pytho
+                            零散知识try语句用来处理异常，运行代码时有时会出现各种各样的错误，致使解析器中断执行，并提示xxxxxxErorr的提示，后面跟具体的错误的描述，这被称为是引发了异常。其实异常告诉我们的是遇到了什么类型的错误。xxxxErorr就是pyt
                         
                     </div>
                     <div class="publish-info">
@@ -1323,7 +1617,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.9k</span>&nbsp;字
+                class="white-color">8.8k</span>&nbsp;字
             
             
             

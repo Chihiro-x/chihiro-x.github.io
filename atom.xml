@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chihiro-x.github.io/"/>
-  <updated>2020-06-13T13:44:02.460Z</updated>
+  <updated>2020-06-15T12:57:34.499Z</updated>
   <id>https://chihiro-x.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python常用模块记录</title>
-    <link href="https://chihiro-x.github.io/2020/06/07/python-xue-xi-ji-lu/"/>
-    <id>https://chihiro-x.github.io/2020/06/07/python-xue-xi-ji-lu/</id>
-    <published>2020-06-07T01:15:00.000Z</published>
-    <updated>2020-06-13T13:44:02.460Z</updated>
+    <title>Python学习记录</title>
+    <link href="https://chihiro-x.github.io/2020/06/14/python-xue-xi-ji-lu/"/>
+    <id>https://chihiro-x.github.io/2020/06/14/python-xue-xi-ji-lu/</id>
+    <published>2020-06-14T13:13:14.000Z</published>
+    <updated>2020-06-15T12:57:34.499Z</updated>
     
     <summary type="html">
     
@@ -40,6 +40,8 @@
     
     
       <category term="编程" scheme="https://chihiro-x.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="爬虫" scheme="https://chihiro-x.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   

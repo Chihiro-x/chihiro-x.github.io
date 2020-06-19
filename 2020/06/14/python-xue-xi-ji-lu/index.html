@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Chihiro" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Chihiro" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-15
+                    2020-06-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.8k
+                    8.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    36 分
                 </div>
                 
 
@@ -656,7 +656,160 @@ hello file
 &lt;class 'FileNotFoundError'>
 操作失败
 """</span></code></pre>
-<hr>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>列表是一种结构化的、非标量类型，它是值的有序序列，每个值都可以通过索引进行标识，定义列表可以将列表的元素放在<code>[]</code>中，多个元素用<code>,</code>进行分隔，可以使用<code>for</code>循环对列表元素进行遍历，也可以使用<code>[]</code>或<code>[:]</code>运算符取出列表中的一个或多个元素。</p>
+<p>创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。遍历列表，列表的下标运算</p>
+<pre class=" language-python"><code class="language-python">lists <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#创建列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#打印列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>lists<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#计算列表的长度(元素个数)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#下标(索引)运算</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#下标运算</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> lists<span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#for循环遍历列表</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token keyword">for</span> index <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>lists<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#通过循环用下标遍历列表元素</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
+ <span class="token triple-quoted-string string">"""
+ [1, 2, 3, 4, 5, 6]
+
+6
+
+4
+
+5
+
+1
+2
+3
+4
+5
+6
+
+1
+2
+3
+4
+5
+6
+ """</span></code></pre>
+<p>向列表中添加元素以及如何从列表中移除元素。</p>
+<pre class=" language-python"><code class="language-python">lists <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+lists <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#添加元素</span>
+lists<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 2, 3, 4, 5, 6, 7]</span>
+<span class="token comment" spellcheck="true">#向指定元素位置后添加</span>
+lists<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 2, 3, 9, 4, 5, 6]</span>
+<span class="token comment" spellcheck="true">#通过成员判断是否在列表里，如果存在就删除</span>
+<span class="token keyword">if</span> <span class="token number">3</span> <span class="token keyword">in</span> lists<span class="token punctuation">:</span>
+    lists<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 2, 4, 5, 6]</span>
+<span class="token comment" spellcheck="true">#从指定的位置删除元素</span>
+lists<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 3, 4, 5, 6]</span>
+<span class="token comment" spellcheck="true">#清空列表元素</span>
+lists<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#[]</span></code></pre>
+<p>列表的切片操作</p>
+<pre class=" language-python"><code class="language-python">lists <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+list1 <span class="token operator">=</span> lists<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [2, 3]</span>
+<span class="token comment" spellcheck="true"># 可以通过完整切片操作来复制列表</span>
+list2 <span class="token operator">=</span> lists<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 2, 3, 4, 5, 6]</span>
+list2 <span class="token operator">=</span> lists<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#[4, 5]</span>
+<span class="token comment" spellcheck="true"># 可以通过反向切片操作来获得倒转后的列表的拷贝</span>
+list2 <span class="token operator">=</span> lists<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#[6, 5, 4, 3, 2, 1]</span></code></pre>
+<p>对列表的排序操作</p>
+<pre class=" language-python"><code class="language-python">lists <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span>
+list2 <span class="token operator">=</span> sorted<span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#sorted函数返回列表排序后的拷贝不会修改传入的列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#[1, 2, 3, 5, 8, 9]</span>
+lists <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'狗'</span><span class="token punctuation">,</span> <span class="token string">'狗熊'</span><span class="token punctuation">,</span> <span class="token string">'狗熊岭'</span><span class="token punctuation">]</span>
+list2 <span class="token operator">=</span> sorted<span class="token punctuation">(</span>lists<span class="token punctuation">,</span> key<span class="token operator">=</span>len<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#通过key关键字参数指定根据字符串长度进行排序而不是默认的字母表顺序</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['狗', '狗熊', '狗熊岭']</span></code></pre>
+<h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><p>Python的元组与列表类似，不同之处在于元组的元素不能修改。元组使用小括号，列表使用方括号。元组创建很简单，只需要在括号中添加元素，并使用逗号隔开即可。</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#定义元组</span>
+t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'熊大'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#光头强</span>
+<span class="token comment" spellcheck="true">#遍历元组中的值</span>
+<span class="token keyword">for</span> x <span class="token keyword">in</span> t<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+('熊大', 20, '光头强', 30)
+('熊大', 20, '光头强', 30)
+('熊大', 20, '光头强', 30)
+('熊大', 20, '光头强', 30)
+"""</span>
+<span class="token comment" spellcheck="true">#将元组转换为列表</span>
+person <span class="token operator">=</span> list<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># ['熊大', 20, '光头强', 30]</span>
+<span class="token comment" spellcheck="true">#将列表转换为元组</span>
+person <span class="token operator">=</span> list<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+x <span class="token operator">=</span> tuple<span class="token punctuation">(</span>person<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ('熊大', 20, '光头强', 30)</span>
+</code></pre>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>Python中的集合跟数学上的集合是一致的，不允许有重复元素，而且可以进行交集、并集、差集等运算。集合（set）是一个无序的不重复元素序列。可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 创建格式：</span>
+parame <span class="token operator">=</span> <span class="token punctuation">{</span>value01<span class="token punctuation">,</span>value02<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+或者
+set<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 创建集合的字面量语法</span>
+set1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1<span class="token punctuation">,</span> <span class="token string">'Length ='</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>set1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {1, 2, 3, 4, 5, 6} Length = 6</span></code></pre>
+<p>向集合添加元素和从集合删除元素。</p>
+<pre class=" language-python"><code class="language-python">set1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span>
+set1<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {1, 2, 3, 4, 5, 6, 9}</span>
+<span class="token keyword">if</span> <span class="token number">3</span> <span class="token keyword">in</span> set1<span class="token punctuation">:</span>
+    set1<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {1, 2, 4, 5, 6}</span>
+set1<span class="token punctuation">.</span>discard<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 移除集合中的元素，且如果元素不存在，不会发生错误</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {1, 2, 4, 5, 6}</span></code></pre>
+<p>集合的成员、交集、并集、差集等运算</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#交集</span>
+set1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span>
+set2 <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1 <span class="token operator">&amp;</span> set2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#{1, 2, 3, 5, 6}</span>
+<span class="token comment" spellcheck="true">#并集</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1 <span class="token operator">|</span> set2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#{1, 2, 3, 4, 5, 6}</span>
+<span class="token comment" spellcheck="true">#差集</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1 <span class="token operator">-</span> set2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#{4}</span>
+<span class="token comment" spellcheck="true">#对称差</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1 <span class="token operator">^</span> set2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#{4}</span>
+<span class="token comment" spellcheck="true"># 判断子集和超集</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>set1 <span class="token operator">&lt;=</span> set2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#False</span></code></pre>
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>字典是另一种可变容器模型，Python中的字典跟我们生活中使用的字典是一样一样的，它可以存储任意类型对象，与列表、集合不同的是，字典的每个元素都是由一个键和一个值组成的“键值对”，键和值通过冒号分开。</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 创建字典的字面量语法</span>
+scores <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'光头强'</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'熊大'</span><span class="token punctuation">:</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token string">'熊二'</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#{'光头强': 20, '熊大': 16, '熊二': 15}</span>
+<span class="token comment" spellcheck="true"># 创建字典的构造器语法</span>
+scores <span class="token operator">=</span> dict<span class="token punctuation">(</span>光头强<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> 熊大<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">,</span> 熊二<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {'光头强': 20, '熊大': 16, '熊二': 15}</span>
+<span class="token comment" spellcheck="true"># 通过zip函数将两个序列压成字典</span>
+items2 <span class="token operator">=</span> dict<span class="token punctuation">(</span>zip<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>items2<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 通过键可以获取字典中对应的值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">[</span><span class="token string">'光头强'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 20</span>
+<span class="token comment" spellcheck="true"># 对字典中所有键值对进行遍历</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> scores<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{key}: {scores[key]}'</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+光头强: 20
+熊大: 16
+熊二: 15
+"""</span>
+<span class="token comment" spellcheck="true"># 更新字典中的元素</span>
+scores<span class="token punctuation">[</span><span class="token string">'光头强'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">35</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {'光头强': 35, '熊大': 16, '熊二': 15}</span>
+scores<span class="token punctuation">.</span>update<span class="token punctuation">(</span>熊大<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">,</span> 熊二<span class="token operator">=</span><span class="token number">26</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {'光头强': 20, '熊大': 30, '熊二': 26}</span>
+<span class="token comment" spellcheck="true"># 删除字典中的元素</span>
+scores<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {'熊大': 16, '熊二': 15}</span>
+<span class="token comment" spellcheck="true"># 清空字典</span>
+scores<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {}</span></code></pre>
 <h1 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h1><h2 id="time"><a href="#time" class="headerlink" title="time"></a>time</h2><p>时间处理的模块</p>
 <h3 id="time-1"><a href="#time-1" class="headerlink" title="time()"></a>time()</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 返回当前时间戳 运行结果 1591867153.6124237
@@ -696,6 +849,84 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> time
 <span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token string">"2020-06-11 17:37:22"</span></code></pre>
+<h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><p>Pandas是Python的核心数据分析支持库，提供了快速、灵活、明确的数据结构，旨在简单、直观地处理关系型、标记型数据。</p>
+<h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><p>Series的字符串表现形式为：索引在左边，值在右边。由于我们没有为数据指定索引。于是会自动创建一个0到N-1（N为长度）的整数型索引。可以把它当作一个表的列。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas
+x <span class="token operator">=</span> pandas<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'word'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+0        1
+1        2
+2        3
+3    hello
+4     word
+dtype: object
+"""</span></code></pre>
+<h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><p>DataFrame是一个表格型的数据结构，它包含有一组有序的列，每列可以是不同的值类型（数值，字符串，布尔值等）。DataFrame既有行索引也有列索引， 它可以被看做由<code>Series</code>组成的大字典，也就是一个表格。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas
+x <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'姓名'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'熊大'</span><span class="token punctuation">,</span> <span class="token string">'熊二'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'年龄'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'性别'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+y <span class="token operator">=</span> pandas<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+    姓名  年龄 性别
+0  光头强  30  男
+1   熊大  19  男
+2   熊二  18  男
+"""</span></code></pre>
+<p>DataFrame的行索引是index，列索引是columns，我们可以在创建DataFrame时指定索引的值：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas
+x <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'姓名'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'熊大'</span><span class="token punctuation">,</span> <span class="token string">'熊二'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'年龄'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'性别'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+y <span class="token operator">=</span> pandas<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>x<span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token string">'年龄'</span><span class="token punctuation">,</span> <span class="token string">'性别'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+/usr/bin/python3.8 /home/chihiro/Project/PyCharmProject/demo.py
+        姓名  年龄 性别
+one    光头强  30  男
+two     熊大  19  男
+three   熊二  18  男
+"""</span></code></pre>
+<h3 id="CSV文件操作"><a href="#CSV文件操作" class="headerlink" title="CSV文件操作"></a>CSV文件操作</h3><p>读取csv文件内容</p>
+<p><code>pandas.read_csv()</code></p>
+<p><strong>常用参数</strong></p>
+<ul>
+<li>header    header默认为0，表示第一行是表头，如果header设置为None表示没有表头</li>
+<li>index：是否输出索引，默认True</li>
+<li>sep：设置分隔符，默认”,”</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas
+z <span class="token operator">=</span> pandas<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'he.csv'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+    姓名  年龄 性别
+0  光头强  30  男
+1   熊大  19  男
+2   熊二  18  男
+"""</span></code></pre>
+<p>写入csv文件</p>
+<p><code>to_csv</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas
+x <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'姓名'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'光头强'</span><span class="token punctuation">,</span> <span class="token string">'熊大'</span><span class="token punctuation">,</span> <span class="token string">'熊二'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'年龄'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'性别'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+y <span class="token operator">=</span> pandas<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>x<span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token string">'年龄'</span><span class="token punctuation">,</span> <span class="token string">'性别'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+y<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'he.csv'</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">':'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#sep用来指定数据分隔符号，默认为逗号</span>
+<span class="token triple-quoted-string string">"""
+这是文件内容：
+:姓名:年龄:性别
+one:光头强:30:男
+two:熊大:19:男
+three:熊二:18:男
+"""</span></code></pre>
 <hr>
 <h1 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h1><h2 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h2><p>可创建一个整数列表</p>
 <p>函数语法</p>
@@ -1338,6 +1569,8 @@ td6 <span class="token operator">=</span> Mythread<span class="token punctuation
 <span class="token comment" spellcheck="true"># 以上代码设置啦进程执行完成时间为 0.5031812191009521</span>
 <span class="token comment" spellcheck="true"># 同样的代码没有设置进程执行完成的时间为 2.2932705879211426 </span></code></pre>
 <hr>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/wistbean/learn_python3_spider" target="_blank" rel="noopener">https://github.com/wistbean/learn_python3_spider</a></p>
+<p><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">https://github.com/jackfrued/Python-100-Days</a></p>
 
             </div>
             <hr/>
@@ -1914,7 +2147,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.5k</span>&nbsp;字
+                class="white-color">12.4k</span>&nbsp;字
             
             
             

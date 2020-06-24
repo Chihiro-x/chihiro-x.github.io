@@ -410,12 +410,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">编程</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Others/" class="post-category">
+                                Others
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -438,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9k
+                    9.1k
                 </div>
                 
 
@@ -1527,7 +1544,48 @@ sex不存在
 某某某2开始做饭--19点06分14秒
 某某某2开始做饭--19点06分15秒
 """</span></code></pre>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>Python3 中可以使用 json 模块来对 JSON 数据进行编解码</p>
+<h4 id="loads"><a href="#loads" class="headerlink" title="loads()"></a>loads()</h4><p>将json数据转化为python对象是这样的</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> json
+jsondata <span class="token operator">=</span> <span class="token triple-quoted-string string">'''
+{
+"Uin":0,
+"UserName":"@c482d142bc698bc3971d9f8c26335c5c",
+"NickName":"8",
+"DisplayName":"",
+"ChatRoomId":0,
+"KeyWord":"che",
+"EncryChatRoomId":"",
+"IsOwner":0
+}
+'''</span>
+friend <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>jsondata<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>friend<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+{'Uin': 0, 'UserName': '@c482d142bc698bc3971d9f8c26335c5c', 'NickName': '8', 'DisplayName': '', 'ChatRoomId': 0, 'KeyWord': 'che', 'EncryChatRoomId': '', 'IsOwner': 0}
+"""</span></code></pre>
+<h4 id="dumps"><a href="#dumps" class="headerlink" title="dumps()"></a>dumps()</h4><p>将python对象转换为json</p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"将上面输出的结果转换为json"</span>
+<span class="token keyword">import</span> json
+data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'Uin'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token string">'UserName'</span><span class="token punctuation">:</span> <span class="token string">'@c482d142bc698bc3971d9f8c26335c5c'</span><span class="token punctuation">,</span>
+    <span class="token string">'NickName'</span><span class="token punctuation">:</span> <span class="token string">'8'</span><span class="token punctuation">,</span>
+    <span class="token string">'DisplayName'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'ChatRoomId'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token string">'KeyWord'</span><span class="token punctuation">:</span> <span class="token string">'che'</span><span class="token punctuation">,</span>
+    <span class="token string">'EncryChatRoomId'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'IsOwner'</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+json <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+运行结果
+{"Uin": 0, "UserName": "@c482d142bc698bc3971d9f8c26335c5c", "NickName": "8", "DisplayName": "", "ChatRoomId": 0, "KeyWord": "che", "EncryChatRoomId": "", "IsOwner": 0}
 
+"""</span></code></pre>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
             </div>
             <hr/>
 
@@ -1589,7 +1647,15 @@ sex不存在
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">编程</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1763,7 +1829,7 @@ sex不存在
                 <a href="/2020/06/21/python-pa-chong-xue-xi-ji-lu/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/" class="responsive-img" alt="Python爬虫学习记录">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python爬虫学习记录">
                         
                         <span class="card-title">Python爬虫学习记录</span>
                     </div>
@@ -1780,13 +1846,29 @@ sex不存在
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Chihiro
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Others/" class="post-category">
+                                    Others
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">编程</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -2079,7 +2161,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.6k</span>&nbsp;字
+                class="white-color">21.7k</span>&nbsp;字
             
             
             

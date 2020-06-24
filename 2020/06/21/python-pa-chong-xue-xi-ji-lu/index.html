@@ -479,7 +479,7 @@
             <div id="articleContent">
                 <p>定义：网络爬虫是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。如果把互联网比喻成一张网，那么网络爬虫就可以认为是一个在网上爬来爬去的小虫子，它通过网页的链接地址来寻找网页，通过特定的搜索算法来确定路线，通常从网站的某一个页面开始，读取网页的内容，找到在网页中的其它链接地址，然后通过这些链接地址寻找下一个网页，这样一直循环下去，直到把这个网站所有网页都抓取完为止。</p>
 <h2 id="爬虫过程"><a href="#爬虫过程" class="headerlink" title="爬虫过程"></a>爬虫过程</h2><p>下面的图片很好的展现了一般的网络爬虫的基本过程</p>
-<p><img src="https://chihiro-x.github.io/picgo//images/script.png" alt="https://chihiro-x.github.io/picgo//images/script.png"></p>
+<p><img src="https://chihiro-x.github.io/picgo/images/script.png" alt=""></p>
 <h2 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h2><h3 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h3><p>在Python中发起标准的HTTP请求</p>
 <h4 id="发送请求-1"><a href="#发送请求-1" class="headerlink" title="发送请求"></a>发送请求</h4><p>首先导入requests模块</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests</code></pre>
@@ -798,7 +798,7 @@ soup <span class="token operator">=</span> BeautifulSoup<span class="token punct
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>转换为节点树图为：(没研究过画图，凑胡着看吧)</p>
-<p><img src="https://chihiro-x.github.io/picgo//images/%E8%8A%82%E7%82%B9%E5%9B%BE.png" alt=""></p>
+<p><img src="https://chihiro-x.github.io/picgo/images/%E8%8A%82%E7%82%B9%E5%9B%BE.png" alt=""></p>
 <p><strong>节点之间的关系</strong></p>
 <ul>
 <li><p>父（Parent）</p>
@@ -1045,7 +1045,7 @@ hello file
 ['喜羊羊', '2000', '90', '男', '18']
 """</span></code></pre>
 <p>使用表格工具打开如下</p>
-<p><img src="https://chihiro-x.github.io/picgo//images/table1.png" alt="https://chihiro-x.github.io/picgo//images/table1.png"></p>
+<p><img src="https://chihiro-x.github.io/picgo/images/table1.png" alt=""></p>
 <h4 id="pandas模块"><a href="#pandas模块" class="headerlink" title="pandas模块"></a>pandas模块</h4><p><strong>读取文件</strong></p>
 <p>使用<code>pandas.read_csv()</code>读取文件</p>
 <p><strong>常用参数</strong></p>
@@ -1095,11 +1095,11 @@ z<span class="token punctuation">.</span>to_csv<span class="token punctuation">(
 <li><strong>多线程：</strong>工人们同步完成多项任务。</li>
 <li><strong>并发：</strong>一个工人要同时做三件事情，识别歌曲，识别影视，观察机器</li>
 </ul>
-<p><img src="https://chihiro-x.github.io/picgo//images/cpu1.png" alt="https://chihiro-x.github.io/picgo//images/cpu1.png"></p>
+<p><img src="https://chihiro-x.github.io/picgo/images/cpu1.png" alt=""></p>
 <ul>
 <li><strong>并行：</strong>分三个工人同时做，工人1识别歌曲，工人2识别影视，工人3观察机器</li>
 </ul>
-<p><img src="https://chihiro-x.github.io/picgo/images/cpu2.png" alt="https://chihiro-x.github.io/picgo//images/cpu2.png"></p>
+<p><img src="https://chihiro-x.github.io/picgo/images/cpu2.png" alt=""></p>
 <h3 id="实现多进程，多线程"><a href="#实现多进程，多线程" class="headerlink" title="实现多进程，多线程"></a>实现多进程，多线程</h3><p>在python中使用<strong>threading</strong>模块来实现多线程，</p>
 <p>使用<strong>multiprocessing</strong>实现多进程，</p>
 <p>使用<strong>concurrent.futures</strong>实现进程池/线程池，</p>

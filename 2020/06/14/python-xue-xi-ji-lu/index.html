@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-19
+                    2020-06-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.7k
+                    8.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    36 分
+                    37 分
                 </div>
                 
 
@@ -562,7 +562,7 @@ sex不存在
 20
 调研结束
 """</span></code></pre>
-<h2 id="多线程，多进程，协程"><a href="#多线程，多进程，协程" class="headerlink" title="多线程，多进程，协程"></a>多线程，多进程，协程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程就是正在运行的程序，比如你的系统现在运行着的QQ就是一个进程，一旦「QQ」运行起来系统就会分配给「QQ」内存和资源。<strong>单进程</strong>就是你的电脑只能做一个事情，比如打开啦QQ就不能再打开微信啦，但是现在可以看到你的电脑又是玩游戏，又是听音乐，这就是<strong>多线程</strong>，在同一段时间里可以’同时’执行多个任务。</p>
+<h2 id="多线程，多进程，协程"><a href="#多线程，多进程，协程" class="headerlink" title="多线程，多进程，协程"></a>多线程，多进程，协程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程就是正在运行的程序，比如你的系统现在运行着的QQ就是一个进程，一旦「QQ」运行起来系统就会分配给「QQ」内存和资源。<strong>单进程</strong>就是你的电脑只能做一个事情，比如打开啦QQ就不能再打开微信啦，但是现在可以看到你的电脑又是玩游戏，又是听音乐，这就是<strong>多线程</strong>，在同一段时间里可以’同时’执行多个任务。一个单核的 CPU 在一个时间点上只能运行一个程序。之所以你能感觉到你电脑上的程序在同时运行是因为CPU 在做着切换，因为 CPU 的切换速度超级快，快到让你感觉到你开着的所有程序好像是在同时运行。</p>
 <h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>在一个进程里可以执行多个任务，在这里的每一个任务就是一个线程，线程可以说是程序用CPU的一个基本单元，所以一个程序里如果只是单一的一个执行路径，呢他就是单线程；如果程序中有多个执行路径呢他就是多线程。</p>
 <h3 id="并行"><a href="#并行" class="headerlink" title="并行"></a>并行</h3><p>一个单核的CPU一次只能执行一个进程，多核的CPU就可以同时执行多个进程，这就是并行。在某一个时间段里可以同时执行多个进程。</p>
 <h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>比如在双十一的呢天晚上12：00会有很多人在这个时间点上秒杀某一个商品。在某一时间点上可以同时执行多个进程。</p>
@@ -582,7 +582,7 @@ sex不存在
 </tr>
 <tr>
 <td><code>&#39;w&#39;</code></td>
-<td>写入（会先截断之前的内容）</td>
+<td>写入</td>
 </tr>
 <tr>
 <td><code>&#39;x&#39;</code></td>
@@ -810,6 +810,19 @@ scores<span class="token punctuation">.</span>pop<span class="token punctuation"
 <span class="token comment" spellcheck="true"># 清空字典</span>
 scores<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {}</span></code></pre>
+<h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><h1 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h1><h2 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h2><p>可创建一个整数列表</p>
+<p>函数语法</p>
+<pre class=" language-python"><code class="language-python">range<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop step<span class="token punctuation">)</span></code></pre>
+<p>参数说明：</p>
+<ul>
+<li>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</li>
+<li>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</li>
+<li>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 1 2 3 4 5 6 7 8 9</span></code></pre>
 <h1 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h1><h2 id="time"><a href="#time" class="headerlink" title="time"></a>time</h2><p>时间处理的模块</p>
 <h3 id="time-1"><a href="#time-1" class="headerlink" title="time()"></a>time()</h3><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 返回当前时间戳 运行结果 1591867153.6124237
@@ -928,21 +941,35 @@ two:熊大:19:男
 three:熊二:18:男
 """</span></code></pre>
 <hr>
-<h1 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h1><h2 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h2><p>可创建一个整数列表</p>
-<p>函数语法</p>
-<pre class=" language-python"><code class="language-python">range<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop step<span class="token punctuation">)</span></code></pre>
-<p>参数说明：</p>
-<ul>
-<li>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</li>
-<li>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</li>
-<li>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</li>
-</ul>
-<p><strong>示例</strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 1 2 3 4 5 6 7 8 9</span></code></pre>
-<hr>
-<h1 id="爬虫相关模块"><a href="#爬虫相关模块" class="headerlink" title="爬虫相关模块"></a>爬虫相关模块</h1><h2 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h2><p>在Python中发起标准的HTTP请求</p>
+<h2 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h2><p>csv文件格式是一种通用的电子表格和数据库导入导出格式。可以使用csv模块对csv文件进行操作。</p>
+<h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> csv
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'he.csv'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    csv_reader <span class="token operator">=</span> csv<span class="token punctuation">.</span>reader<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> csv_reader<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+['名字', '年龄']
+['熊大', '18']
+['熊二', '17']
+"""</span></code></pre>
+<h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> csv
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'he.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    csv_writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    header <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'名字'</span><span class="token punctuation">,</span> <span class="token string">'年龄'</span><span class="token punctuation">]</span>
+    rows <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">[</span><span class="token string">'熊大'</span><span class="token punctuation">,</span> <span class="token string">'18'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token string">'熊二'</span><span class="token punctuation">,</span> <span class="token string">'17'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span>
+    csv_writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span>header<span class="token punctuation">)</span>
+    csv_writer<span class="token punctuation">.</span>writerows<span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+文件内容:
+名字,年龄
+熊大,18
+熊二,17
+"""</span></code></pre>
+<h2 id="pymysql"><a href="#pymysql" class="headerlink" title="pymysql"></a>pymysql</h2><p>对数据库进行操作</p>
+<h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><h2 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h2><p>在Python中发起标准的HTTP请求</p>
 <h3 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h3><p><strong>GET请求</strong></p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
 requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"https://www.sqlsec.com"</span><span class="token punctuation">)</span></code></pre>
@@ -1293,7 +1320,7 @@ json <span class="token operator">=</span> json<span class="token punctuation">.
 <li><strong>getName():</strong> 返回线程名。</li>
 <li><strong>setName():</strong> 设置线程名。</li>
 </ul>
-<p>直接创建 Thread ，将一个 callable 对象从类的构造器传递进去，这个 callable 就是回调函数，用来处理任务。比如以下例子，雇佣俩保姆，在同一时间做不同的事情</p>
+<p>直接创建 Thread ，将一个 callable 对象从类的构造器传递进去，这个 callable 就是回调函数，用来处理任务。比如以下例子，雇佣俩工人，在同一时间做不同的事情</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
 <span class="token keyword">import</span> time
 <span class="token keyword">def</span> <span class="token function">zuofan_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1569,7 +1596,7 @@ td6 <span class="token operator">=</span> Mythread<span class="token punctuation
 <span class="token comment" spellcheck="true"># 以上代码设置啦进程执行完成时间为 0.5031812191009521</span>
 <span class="token comment" spellcheck="true"># 同样的代码没有设置进程执行完成的时间为 2.2932705879211426 </span></code></pre>
 <hr>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/wistbean/learn_python3_spider" target="_blank" rel="noopener">https://github.com/wistbean/learn_python3_spider</a></p>
+<h1 id="爬虫实例"><a href="#爬虫实例" class="headerlink" title="爬虫实例"></a>爬虫实例</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/wistbean/learn_python3_spider" target="_blank" rel="noopener">https://github.com/wistbean/learn_python3_spider</a></p>
 <p><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">https://github.com/jackfrued/Python-100-Days</a></p>
 
             </div>
@@ -1807,53 +1834,35 @@ td6 <span class="token operator">=</span> Mythread<span class="token punctuation
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/14/python-xue-xi-ji-lu/">
+                <a href="/2020/06/21/python-pa-chong-xue-xi-ji-lu/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python学习记录">
+                        <img src="/medias/featureimages/" class="responsive-img" alt="Python爬虫学习记录">
                         
-                        <span class="card-title">Python学习记录</span>
+                        <span class="card-title">Python爬虫学习记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            零散知识try语句用来处理异常，运行代码时有时会出现各种各样的错误，致使解析器中断执行，并提示xxxxxxErorr的提示，后面跟具体的错误的描述，这被称为是引发了异常。其实异常告诉我们的是遇到了什么类型的错误。xxxxErorr就是pyt
+                            定义：网络爬虫是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。如果把互联网比喻成一张网，那么网络爬虫就可以认为是一个在网上爬来爬去的小虫子，它通过网页的链接地址来寻找网页，通过特定的搜索算法来确定路线，通常从网站的某一个页面开始，
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Others/" class="post-category">
-                                    Others
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Chihiro
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">编程</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">爬虫</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -2147,7 +2156,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.4k</span>&nbsp;字
+                class="white-color">21.6k</span>&nbsp;字
             
             
             

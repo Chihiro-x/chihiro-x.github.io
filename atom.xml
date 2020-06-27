@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chihiro-x.github.io/"/>
-  <updated>2020-06-24T10:55:16.681Z</updated>
+  <updated>2020-06-27T05:59:04.599Z</updated>
   <id>https://chihiro-x.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://chihiro-x.github.io/2020/06/21/python-pa-chong-xue-xi-ji-lu/"/>
     <id>https://chihiro-x.github.io/2020/06/21/python-pa-chong-xue-xi-ji-lu/</id>
     <published>2020-06-21T02:58:35.000Z</published>
-    <updated>2020-06-24T10:55:16.681Z</updated>
+    <updated>2020-06-27T05:59:04.599Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;定义：网络爬虫是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。如果把互联网比喻成一张网，那么网络爬虫就可以认为是一个在网上爬来爬去的小虫子，它通过网页的链接地址来寻找网页，通过特定的搜索算法来确定路线，通常从网站的某一个页面开始，读取网页的内容，找到在网页中的其它
+          &lt;p&gt;网络爬虫是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。如果把互联网比喻成一张网，那么网络爬虫就可以认为是一个在网上爬来爬去的小虫子，它通过网页的链接地址来寻找网页，通过特定的搜索算法来确定路线，通常从网站的某一个页面开始，读取网页的内容，找到在网页中的其它链接地
         
       
     

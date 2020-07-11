@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-27
+                    2020-07-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.1k
+                    10.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    41 分
+                    44 分
                 </div>
                 
 
@@ -1085,7 +1085,8 @@ hello file
 <p>使用<strong>concurrent.futures</strong>实现进程池/线程池，</p>
 <p><strong>注：</strong>因为频繁的创建线程进程销毁线程进程，非常的浪费资源，应该把他们放到一个池子里，通过这个池子就可以重复的利用，不会造成过多的资源浪费。「线程池，进程池」</p>
 <h2 id="爬虫反爬"><a href="#爬虫反爬" class="headerlink" title="爬虫反爬"></a>爬虫反爬</h2><p>。。。。。。。。。。。。</p>
-<h2 id="爬虫实例"><a href="#爬虫实例" class="headerlink" title="爬虫实例"></a>爬虫实例</h2><h3 id="豆瓣图书Top200"><a href="#豆瓣图书Top200" class="headerlink" title="豆瓣图书Top200"></a>豆瓣图书Top200</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> re
+<h2 id="爬虫实例"><a href="#爬虫实例" class="headerlink" title="爬虫实例"></a>爬虫实例</h2><h3 id="豆瓣图书Top200"><a href="#豆瓣图书Top200" class="headerlink" title="豆瓣图书Top200"></a>豆瓣图书Top200</h3><p>网址： <a href="https://book.douban.com/top250" target="_blank" rel="noopener">https://book.douban.com/top250</a></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> re
 <span class="token keyword">import</span> csv
 <span class="token keyword">import</span> time
 <span class="token keyword">import</span> requests
@@ -1108,7 +1109,7 @@ hello file
     <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'获取失败'</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true"># 使用re获取数据，只是一个示例,输出的是列表格式</span>
+<span class="token comment" spellcheck="true"># 使用re获取数据，只是一个示例</span>
 
 <span class="token comment" spellcheck="true"># def parse_result(html):</span>
 <span class="token comment" spellcheck="true">#     book_score = re.findall('&lt;span class="rating_nums">(.*?)&lt;/span>', html, re.S)</span>
@@ -1127,7 +1128,7 @@ hello file
         <span class="token keyword">yield</span> <span class="token punctuation">[</span>book_name<span class="token punctuation">,</span> book_score<span class="token punctuation">,</span> book_description<span class="token punctuation">]</span>
 
 
-<span class="token comment" spellcheck="true"># 使用xpath提取数据,返回的也是列表格式</span>
+<span class="token comment" spellcheck="true"># 使用xpath提取数据</span>
 
 <span class="token comment" spellcheck="true"># def parse_result(html):</span>
 <span class="token comment" spellcheck="true">#     item = etree.HTML(html)</span>
@@ -1657,6 +1658,82 @@ json <span class="token operator">=</span> json<span class="token punctuation">.
 {"Uin": 0, "UserName": "@c482d142bc698bc3971d9f8c26335c5c", "NickName": "8", "DisplayName": "", "ChatRoomId": 0, "KeyWord": "che", "EncryChatRoomId": "", "IsOwner": 0}
 
 """</span></code></pre>
+<h3 id="time"><a href="#time" class="headerlink" title="time"></a>time</h3><p>提供了各种时间相关的函数</p>
+<h4 id="time-1"><a href="#time-1" class="headerlink" title="time()"></a>time()</h4><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+返回当前时间戳 运行结果 1591867153.6124237
+"""</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h4 id="sleep"><a href="#sleep" class="headerlink" title="sleep()"></a>sleep()</h4><p>线程推迟指定的时间运行。单位为秒。</p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"每过两秒打印一个数字"</span>
+<span class="token keyword">import</span> time
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre>
+<h4 id="localtime"><a href="#localtime" class="headerlink" title="localtime()"></a>localtime()</h4><p>以时间元祖(struct_time)的形式返回</p>
+<pre class=" language-python"><code class="language-python">time<span class="token punctuation">.</span>struct_time<span class="token punctuation">(</span>tm_year<span class="token operator">=</span><span class="token number">2020</span><span class="token punctuation">,</span> tm_mon<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> tm_mday<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span> tm_hour<span class="token operator">=</span><span class="token number">17</span><span class="token punctuation">,</span> tm_min<span class="token operator">=</span><span class="token number">26</span><span class="token punctuation">,</span> tm_sec<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span> tm_wday<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> tm_yday<span class="token operator">=</span><span class="token number">163</span><span class="token punctuation">,</span> tm_isdst<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+<h4 id="strftime"><a href="#strftime" class="headerlink" title="strftime()"></a>strftime()</h4><p>根据时间元组的形式格化为字符形式</p>
+<pre class=" language-python"><code class="language-python">    <span class="token operator">%</span>A      本地完整星期名称
+    <span class="token operator">%</span>b      本地简化月份名称
+    <span class="token operator">%</span>B      本地完整月份名称
+    <span class="token operator">%</span>c      本地相应的日期和时间表示
+    <span class="token operator">%</span>d      一个月中的第几天<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">31</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>H      一天中的第几个小时<span class="token punctuation">(</span><span class="token number">24</span>小时制，<span class="token number">00</span><span class="token operator">-</span><span class="token number">23</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>l      一天中的第几个小时<span class="token punctuation">(</span><span class="token number">12</span>小时制，<span class="token number">01</span><span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>j      一年中的第几天<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">366</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>m      月份<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>M      分钟数<span class="token punctuation">(</span><span class="token number">00</span><span class="token operator">-</span><span class="token number">59</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>p      本地am或者pm的相应符
+    <span class="token operator">%</span>S      秒<span class="token punctuation">(</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">61</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>U      一年中的星期数<span class="token punctuation">(</span><span class="token number">00</span><span class="token operator">-</span><span class="token number">53</span><span class="token punctuation">,</span>星期天是一个星期的开始<span class="token punctuation">,</span>第一个星期天之前的所有天数都放在第０周<span class="token punctuation">)</span>
+    <span class="token operator">%</span>w      一个星期中的第几天<span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">0</span>是星期天<span class="token punctuation">)</span>
+    <span class="token operator">%</span>W      和<span class="token operator">%</span>U基本相同，不同的是<span class="token operator">%</span>W以星期一为一个星期的开始
+    <span class="token operator">%</span>x      本地相应日期
+    <span class="token operator">%</span>X      本地相应时间
+    <span class="token operator">%</span>y      去掉世纪的年份<span class="token punctuation">(</span><span class="token number">00</span><span class="token operator">-</span><span class="token number">99</span><span class="token punctuation">)</span>
+    <span class="token operator">%</span>Y      完整的年份        </code></pre>
+<p>例如：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> time
+<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token string">"2020-06-11 17:37:22"</span></code></pre>
+<h3 id="os"><a href="#os" class="headerlink" title="os"></a>os</h3><h4 id="处理文件和目录"><a href="#处理文件和目录" class="headerlink" title="处理文件和目录"></a>处理文件和目录</h4><p>首先导入模块</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os</code></pre>
+<p>获取当前目录</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true"># /home/chihiro/Project/PyCharmProject</span></code></pre>
+<p>获取目录中的内容</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">'/home/chihiro/Project/PyCharmProject'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># ['.idea', 'demo.html', 'demo.txt', 'demo.csv', 'demo.py']</span></code></pre>
+<p>创建目录</p>
+<pre class=" language-python"><code class="language-python">os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span><span class="token string">"/home/chihiro/Project/PyCharmProject/demo"</span><span class="token punctuation">)</span></code></pre>
+<p>删除目录</p>
+<pre class=" language-python"><code class="language-python">os<span class="token punctuation">.</span>rmdir<span class="token punctuation">(</span><span class="token string">"/home/chihiro/Project/PyCharmProject/demo"</span><span class="token punctuation">)</span></code></pre>
+<p>判断是否是目录</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span><span class="token string">"/home/chihiro/Project/PyCharmProject"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># True</span></code></pre>
+<p>判断是否为文件</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span><span class="token string">"/home/chihiro/Project/PyCharmProject"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># False</span></code></pre>
+<p>遍历目录</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
+<span class="token keyword">for</span> i <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span><span class="token string">'/home/chihiro/Project/PyCharmProject'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+('/home/chihiro/Project/PyCharmProject', ['.idea'], ['demo.html', 'demo.txt', 'demo.csv', 'demo.py'])
+('/home/chihiro/Project/PyCharmProject/.idea', ['inspectionProfiles'], ['PyCharmProject.iml', 'workspace.xml', 'misc.xml', 'modules.xml'])
+"""</span></code></pre>
+<p>返回路径分割符号</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>sep<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># /</span></code></pre>
+<p>改变当前工作目录</p>
+<pre class=" language-python"><code class="language-python">os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">'/home/chihiro'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># /home/chihiro</span></code></pre>
+<p>以文件名中的<code>.</code>作为分隔符，分隔文件名称与文件后缀</p>
+<pre class=" language-python"><code class="language-python">path <span class="token operator">=</span> <span class="token string">'/home/chihiro/Project/PyCharmProject/demo.py'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>splitext<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># ('/home/chihiro/Project/PyCharmProject/demo', '.py')</span></code></pre>
 <h2 id="函数学习"><a href="#函数学习" class="headerlink" title="函数学习"></a>函数学习</h2><h3 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h3><p>可创建一个整数列表</p>
 <p>函数语法</p>
 <pre class=" language-python"><code class="language-python">range<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop step<span class="token punctuation">)</span></code></pre>
@@ -1917,9 +1994,56 @@ A
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/05/tian-cai-zai-zuo-feng-zi-zai-you/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="《天才在左 疯子在右》">
+                        
+                        <span class="card-title">《天才在左 疯子在右》</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            简介这本书，是一群误入歧途的天才的故事，也是一群入院治疗的疯子的故事。这本书，是作者高铭耗时四年深入医院精神科，公安等神秘机构，和数百名“非常态人类”直接接触后，以访谈形式记录生活在社会另一个角落的人群(精神病患者，心理障碍者等边缘人)的所
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%98%85%E8%AF%BB/" class="post-category">
+                                    阅读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B9%A6%E7%B1%8D/">
+                        <span class="chip bg-color">书籍</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2020/06/21/python-pa-chong-xue-xi-ji-lu/">
@@ -1962,58 +2086,6 @@ A
                     
                     <a href="/tags/%E7%88%AC%E8%99%AB/">
                         <span class="chip bg-color">爬虫</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/06/06/linux-chang-yong-ming-ling/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/2.png" class="responsive-img" alt="Linux常用命令">
-                        
-                        <span class="card-title">Linux常用命令</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            curl
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">命令</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">系统</span>
                     </a>
                     
                 </div>
@@ -2257,7 +2329,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">10.9k</span>&nbsp;字
             
             
             

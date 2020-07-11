@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chihiro-x.github.io/"/>
-  <updated>2020-06-27T06:06:23.265Z</updated>
+  <updated>2020-07-05T03:12:07.574Z</updated>
   <id>https://chihiro-x.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《天才在左 疯子在右》</title>
+    <link href="https://chihiro-x.github.io/2020/07/05/tian-cai-zai-zuo-feng-zi-zai-you/"/>
+    <id>https://chihiro-x.github.io/2020/07/05/tian-cai-zai-zuo-feng-zi-zai-you/</id>
+    <published>2020-07-05T02:45:49.000Z</published>
+    <updated>2020-07-05T03:12:07.574Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="阅读" scheme="https://chihiro-x.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="书籍" scheme="https://chihiro-x.github.io/tags/%E4%B9%A6%E7%B1%8D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python爬虫学习记录</title>
     <link href="https://chihiro-x.github.io/2020/06/21/python-pa-chong-xue-xi-ji-lu/"/>
     <id>https://chihiro-x.github.io/2020/06/21/python-pa-chong-xue-xi-ji-lu/</id>
     <published>2020-06-21T02:58:35.000Z</published>
-    <updated>2020-06-27T06:06:23.265Z</updated>
+    <updated>2020-07-05T11:13:39.550Z</updated>
     
     <summary type="html">
     
@@ -42,64 +69,6 @@
       <category term="编程" scheme="https://chihiro-x.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="爬虫" scheme="https://chihiro-x.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux常用命令</title>
-    <link href="https://chihiro-x.github.io/2020/06/06/linux-chang-yong-ming-ling/"/>
-    <id>https://chihiro-x.github.io/2020/06/06/linux-chang-yong-ming-ling/</id>
-    <published>2020-06-06T00:26:04.000Z</published>
-    <updated>2020-06-10T02:27:03.003Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;curl&quot;&gt;&lt;a href=&quot;#curl&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://chihiro-x.github.io/categories/Linux/"/>
-    
-    
-      <category term="命令" scheme="https://chihiro-x.github.io/tags/%E5%91%BD%E4%BB%A4/"/>
-    
-      <category term="系统" scheme="https://chihiro-x.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP常见函数记录</title>
-    <link href="https://chihiro-x.github.io/2020/06/03/php-chang-jian-han-shu-ji-lu/"/>
-    <id>https://chihiro-x.github.io/2020/06/03/php-chang-jian-han-shu-ji-lu/</id>
-    <published>2020-06-03T12:59:58.000Z</published>
-    <updated>2020-06-10T02:24:24.194Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;isset&quot;&gt;&lt;a href=&quot;#isset&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Others" scheme="https://chihiro-x.github.io/categories/Others/"/>
-    
-    
-      <category term="编程" scheme="https://chihiro-x.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="函数" scheme="https://chihiro-x.github.io/tags/%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
